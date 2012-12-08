@@ -9,7 +9,7 @@ int stack_init(stack_t *s) {
   return 0;
 }
 
-float stack_pop(stack_t *s) {
+double stack_pop(stack_t *s) {
   if(s->size <= 0) {
     fprintf(stderr, "Cannot pop stack. It's already empty!");
     return -1.0;
@@ -17,7 +17,7 @@ float stack_pop(stack_t *s) {
   else return s->content[--s->size];
 }
 
-int stack_push(stack_t *s, float element) {
+int stack_push(stack_t *s, double element) {
   if(s->size >= STACK_MAX_SIZE) {
     fprintf(stderr, "Cannot push element onto the stack. It's full!");
     return -1;

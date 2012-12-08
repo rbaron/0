@@ -4,9 +4,10 @@
 #include "stack.h"
 #include "ui.h"
 #include "validate.h"
+#include "config.h"
 
-int print_usage() {
-  printf("Usage:\nYOU tell me!");
+int print_help() {
+  printf("Usage:\nYOU tell me!\n");
   return 0;
 }
 
@@ -22,19 +23,20 @@ int main() {
       //What was the user's input? 
       switch(validate_input(input)) {
         case VALIDATE_NUMBER:
+          stack_push(stack, strtod(input, NULL));
+          printf("Converted: %f\n",strtod(input, NULL)); 
+          break;
+
+        case VALIDATE_OP:
           //op_exec(stack, buff);
           break;
 
-        case VALIDATE_OPERATION:
-          //op_exec(stack, buff);
-          break;
-
-        case VALIDATE_COMMAND:
+        case VALIDATE_CMD:
           //cmd_exec(buff);
           break;
 
         default:
-          print_usage();
+          printf("Unrecognized input. Type %c%c0 for help.\n", CONFIG_DECIMAL_POINT, CONFIG_DECIMAL_POINT);
           break;
       }
 

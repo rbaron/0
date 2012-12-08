@@ -1,6 +1,6 @@
 CC=gcc
-CCFLAGS=-c -Wall
-LDFLAGS=-Wall
+CCFLAGS=-c -g -Wall
+LDFLAGS=-g -Wall
 
 LINK=$(CC) $(LDFLAGS) -o
 COMPILE=$(CC) $(CCFLAGS) -c

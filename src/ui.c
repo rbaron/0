@@ -13,6 +13,8 @@ int ui_refresh(stack_t *stack) {
   while(copy->size > 0) {
     printf("%f\n", stack_pop(copy));
   } 
+
+  free(copy);
  
   return 0;
 }
