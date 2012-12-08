@@ -6,6 +6,7 @@
 #include "validate.h"
 #include "config.h"
 #include "cmd.h"
+#include "op.h"
 
 /*
   Decides if char* string is a number, an operation or a command
@@ -14,13 +15,15 @@ int validate_input(char *string) {
   
   //Is it a number?
   if(validate_number(string)) {
-    printf("Input is a number!\n");
     return VALIDATE_NUMBER;
   }
   //Is it a command?
   if(validate_cmd(string)) {
-    printf("Input is a command!\n");
     return VALIDATE_CMD;
+  }
+  //Is it an operation?
+  if(validate_op(string)) {
+    return VALIDATE_OP;
   }
 
   return 0;
@@ -115,8 +118,29 @@ int validate_cmd(char *string) {
     c = c + 2;
 
     if(!strcmp(c, CMD_POP)) return 1;
+    else if(!strcmp(c, CMD_CLEAR)) return 1;
+    else if(!strcmp(c, CMD_HELP)) return 1;
   }
 
   return 0;
 }
 
+/*
+  Return 1 if string is an operation
+  or 0 if it's not
+  
+  For available operations, see op.h 
+*/
+int validate_op(char *string) {
+  char *c = NULL;
+
+  //Remove eventual '\n' from string
+  if((c = strchr(string, '\n')) != NULL) *c = '\0';
+
+  c = string;
+
+  if(!strcmp(c, OP_ADD) || !strcmp(c, OP_MINUS) || !strcmp(c, OP_MULT)
+      || !strcmp(c, OP_DIV) || !strcmp(c, OP_ROOT) || !strcmp(c, OP_EXP)) return 1;
+
+  return 0;
+}

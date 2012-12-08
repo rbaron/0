@@ -9,5 +9,6 @@ int validate_input(char *string);
 
 int validate_number(char *string);
 int validate_cmd(char *string);
+int validate_op(char *string);
 
 #endif
