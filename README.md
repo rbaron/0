@@ -36,7 +36,7 @@ Commands:
 ,,2  print this help
 ```
 
-As an example, suppose you were to calculate 12.3^(1/3) (the cubic square of 12.3):
+As an example, suppose you were to calculate 12.3^(1/3) (the cubic root of 12.3):
 
 ```
 Stack:
