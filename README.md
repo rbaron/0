@@ -11,7 +11,7 @@ Description
 Configuration
 -------------
 
-The input methods were thought to allow quick calculations using only your numpad. Since numpads can have slightly different layouts (such as `,` instead of `.`), you can configure your input on `config.h`, such as what is your decimal point notation or how many significant digits should be printed. Further configuration can be done on `cmd.h` (for custom commands) and `op.h` (for custom operations).
+The input methods were thought to allow quick calculations using only your numpad. Since numpads can have slightly different layouts (such as `,` instead of `.`), you can configure your settings on `config.h`, such as your decimal point notation or how many significant digits you want to be printed. Further configuration can be done on `cmd.h` (for custom commands) and `op.h` (for custom operations).
 
 Operations
 ----------
@@ -49,7 +49,6 @@ X: 3
 Stack:
 ======
 X: 2.3083502
-
 ```
 
 License
