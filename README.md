@@ -23,12 +23,12 @@ Help:
 =====
 
 Operations:
-+  y + x  
--  y - x  
-*  y * x  
-/  y / x  
-**   y ^ x  
-//   y ^ 1/x
++       y + x  
+-       y - x  
+*       y * x  
+/       y / x  
+**      y ^ x  
+//      y ^ 1/x
 
 Commands:
 ,,0  pop the stack  
